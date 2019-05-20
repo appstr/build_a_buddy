@@ -1,0 +1,16 @@
+// Place all the styles related to the StuffedAnimals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.stuffed-animal {
+  text-align: center;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.show {
+  h1, h3 {
+    padding-top: 50%;
+  }
+}
