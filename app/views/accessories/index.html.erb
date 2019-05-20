@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>All Stuffed Animals</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @accessories.each do |accessory| %>
+      <div class="col-xs-12 col-md-3">
+        <div class="stuffed-animal">
+          <% if @sizes.include? accessory.size.downcase %>
+            <h2><%= link_to "#{accessory.size.capitalize} #{accessory.description.capitalize}", accessory_path(id: accessory.id) %></h2>
+          <% else %>
+            <h2><%= link_to accessory.description.capitalize, accessory_path(id: accessory.id) %></h2>
+          <% end %>
+          <%= image_tag accessory.product_image %>
+          <h4>$<%= accessory.sale_price %></h4>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <div class="stuffed-animal">
+        <%= image_tag @accessory.product_image %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-4">
+      <div class="show">
+        <h1><%= @accessory.description.capitalize %></h1>
+        <h2>Size: <%= @accessory.size.capitalize %></h2>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-4">
+      <div class="show">
+        <h3>$<%= @accessory.sale_price%></h3>
+      </div>
+    </div>
+  </div>
+</div>
