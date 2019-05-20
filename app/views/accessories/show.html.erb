@@ -18,5 +18,22 @@
         <h3>$<%= @accessory.sale_price%></h3>
       </div>
     </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <h4>Other people also bought:</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-xs-12 col-md-4">
+      <%= link_to @suggested_stuffed_animal.description.capitalize, stuffed_animal_path(id: @suggested_stuffed_animal.id) %>
+      <div class="stuffed-animal">
+        <%= image_tag @suggested_stuffed_animal.product_image %>
+      </div>
+    </div>
   </div>
 </div>

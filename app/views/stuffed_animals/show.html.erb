@@ -19,4 +19,20 @@
     </div>
 
   </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <h4>Other people also bought:</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-xs-12 col-md-4">
+      <%= link_to @suggested_accessory.description.capitalize, accessory_path(id: @suggested_accessory.id) %>
+      <div class="stuffed-animal">
+        <%= image_tag @suggested_accessory.product_image %>
+      </div>
+    </div>
+  </div>
 </div>
