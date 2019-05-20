@@ -1,24 +1,21 @@
-# README
+# BUILD-A-BUDDY
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* console: git clone https://github.com/appstr/slingshot_build_a_buddy.git
 
-Things you may want to cover:
+* console: bundle
 
-* Ruby version
+* console: rails db:create db:migrate
 
-* System dependencies
+* console: rake import_csv:inventory
 
-* Configuration
+* console: rake import_csv:product_pricess
 
-* Database creation
+* console: rake import_csv:compatibility
 
-* Database initialization
+* console: rake import_csv:purchase_orders
 
-* How to run the test suite
+* console: rails s
 
-* Services (job queues, cache servers, search engines, etc.)
+* browser: localhost:3000
 
 * Deployment instructions
-
-* ...
