@@ -10,9 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_05_20_140915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accessories", force: :cascade do |t|
+    t.integer "description"
+    t.integer "size"
+    t.integer "quantity"
+    t.float "cost"
+    t.float "sale_price"
+    t.float "profit"
+    t.string "product_image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "accessory_purchases", force: :cascade do |t|
+    t.bigint "accessory_id"
+    t.bigint "purchase_order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["accessory_id"], name: "index_accessory_purchases_on_accessory_id"
+    t.index ["purchase_order_id"], name: "index_accessory_purchases_on_purchase_order_id"
+  end
+
+  create_table "compatibilities", force: :cascade do |t|
+    t.bigint "stuffed_animal_id"
+    t.bigint "accessory_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["accessory_id"], name: "index_compatibilities_on_accessory_id"
+    t.index ["stuffed_animal_id"], name: "index_compatibilities_on_stuffed_animal_id"
+  end
+
+  create_table "purchase_orders", force: :cascade do |t|
+    t.datetime "purchase_datetime"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stuffed_animal_purchases", force: :cascade do |t|
+    t.bigint "stuffed_animal_id"
+    t.bigint "purchase_order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["purchase_order_id"], name: "index_stuffed_animal_purchases_on_purchase_order_id"
+    t.index ["stuffed_animal_id"], name: "index_stuffed_animal_purchases_on_stuffed_animal_id"
+  end
+
+  create_table "stuffed_animals", force: :cascade do |t|
+    t.integer "description"
+    t.integer "quantity"
+    t.float "cost"
+    t.float "sale_price"
+    t.float "profit"
+    t.string "product_image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
