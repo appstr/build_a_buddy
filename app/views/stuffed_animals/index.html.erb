@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>All Stuffed Animals</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @stuffed_animals.each do |animal| %>
+      <div class="col-xs-12 col-md-3">
+        <div class="stuffed-animal">
+          <h2><%= link_to animal.description.capitalize, stuffed_animal_path(id: animal.id) %></h2>
+          <%= image_tag animal.product_image %>
+          <h4>$<%= animal.sale_price %></h4>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
