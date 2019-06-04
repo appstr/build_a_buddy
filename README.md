@@ -8,7 +8,7 @@
 
 * console: rake import_csv:inventory
 
-* console: rake import_csv:product_pricess
+* console: rake import_csv:product_prices
 
 * console: rake import_csv:compatibility
 
@@ -17,5 +17,3 @@
 * console: rails s
 
 * browser: localhost:3000
-
-* Deployment instructions
